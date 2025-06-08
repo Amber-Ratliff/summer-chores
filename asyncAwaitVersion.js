@@ -1,6 +1,3 @@
-//used Math.ceil because I thought it might give a better shot at completion
-const complete = Math.ceil(Math.random() * 10);
-
 function mowYard(person) {
     return new Promise(resolve => {
         setTimeout(() => { 
