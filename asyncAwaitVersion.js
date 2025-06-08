@@ -9,7 +9,7 @@ function mowYard(person) {
     });   
 }
 
-function weedEat(person) {
+function weedEat(person, complete) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             //the threshold to beat increases in each function to simulate the person getting more tired
@@ -23,7 +23,7 @@ function weedEat(person) {
     });
 }
 
-function trimHedges(person) {
+function trimHedges(person, complete) {
    return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (complete >= 3) {
@@ -37,7 +37,7 @@ function trimHedges(person) {
    
 }
 
-function collectWood(person) {
+function collectWood(person, complete) {
      return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (complete >= 4) {
@@ -49,7 +49,7 @@ function collectWood(person) {
     });   
 }
 
-function waterGarden(person) {
+function waterGarden(person, complete) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (complete >= 5) {
@@ -62,6 +62,7 @@ function waterGarden(person) {
 }
 
 async function doSummerChores() {
+    const complete = Math.ceil(Math.random() * 10);
     const person = 'Alice';
     try {
         const mowYardResult = await mowYard(person, complete);
